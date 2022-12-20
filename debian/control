@@ -1,0 +1,65 @@
+Source: haskell-memory
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Clint Adams <clint@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.13),
+ cdbs,
+ ghc (>= 8),
+ ghc-prof,
+ libghc-basement-dev (>= 0.0.7),
+ libghc-basement-prof,
+ libghc-foundation-dev,
+ libghc-foundation-prof,
+Build-Depends-Indep: ghc-doc,
+ libghc-basement-doc,
+Standards-Version: 4.1.4
+Homepage: https://github.com/vincenthz/hs-memory
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-memory
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-memory]
+X-Description: memory and related abstraction stuff
+ Chunk of memory, polymorphic byte array management and manipulation.
+  - A polymorphic byte array abstraction and function similar to strict
+    ByteString.
+  - Different type of byte array abstraction.
+  - Raw memory IO operations (memory set, memory copy, ..)
+  - Aliasing with endianness support.
+
+Package: libghc-memory-dev
+Architecture: any
+Depends: ${haskell:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-memory-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-memory-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends},
+ ${haskell:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
